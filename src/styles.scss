@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'IdaNarrow';
+  src: url('../src/assets/fonts/Ida_Narrow.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'IdaNarrowLight';
+  src: url('../src/assets/fonts/Ida_Narrow_Light.ttf');
+  font-style: normal;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'IdaNarrowBold';
+  src: url('../src/assets/fonts/Ida_Narrow_Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: 'IdaNarrow', monospace;
+}
+
+body {
+  margin: 0;
+}
