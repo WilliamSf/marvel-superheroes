@@ -3,6 +3,7 @@
     <div class="ms-home-input-search-content">
       <label for="person-name">Nome do personagem</label>
       <input
+        [formControl]="characterControl"
         placeholder="Pesquise..."
         type="text"
         name="person-name"
@@ -21,24 +22,25 @@
         <span>Eventos</span>
       </div>
     </div>
-    <div class="ms-grid-table-row" *ngFor="let item of teste">
+    <div class="ms-grid-table-row" *ngFor="let character of filteredCharacters | async">
       <div>
-        <div class="ms-img-person">
-          <img src="https://github.com/Williamsf.png" alt="William Silva"/>
+        <div
+          [style.backgroundImage]="'url('+character.thumbnail.path+'.'+character.thumbnail.extension+')'"
+          class="ms-img-person">
         </div>
         <span>
-          {{item.inicio}}
+          {{character.name}}
         </span>
       </div>
-      <div>
-        {{item.meio}}
+      <div >
+        <p *ngFor="let serie of character.series.items | slice:0:3">{{serie.name}}</p>
       </div>
       <div>
-        {{item.fim}}
+        <p *ngFor="let event of character.events.items | slice:0:3">{{event.name}}</p>
       </div>
     </div>
   </div>
   <div>
-    <app-pagination></app-pagination>
+    <app-pagination [data]="charactersData"></app-pagination>
   </div>
 </div>

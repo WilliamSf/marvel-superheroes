@@ -35,7 +35,7 @@
   transition: background 0.2s ease-in;
   cursor: pointer;
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   &:hover {
     background: var(--red-10);
@@ -45,18 +45,38 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
+
+    &:nth-child(2){
+      display: block;
+      padding-right: 20px;
+    }
+
+    &:nth-child(3) {
+      display: block;
+      padding-right: 20px;
+    }
+
+    p {
+      margin: 0;
+    }
   }
 }
 
 .ms-img-person {
   display: inline-flex;
   align-items: center;
-  margin-right: 1.5rem;
-}
 
-.ms-img-person > img {
-  width: 3.7rem;
-  height: 3.7rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  margin: 0 1.5rem;
+
+  width: 58px;
+  height: 58px;
+
   border-radius: 50%;
 }
+
 
