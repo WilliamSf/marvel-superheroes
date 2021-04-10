@@ -7,6 +7,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public teste = [
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+    {
+      inicio: 'inicio',
+      meio: 'meio',
+      fim: 'fim'
+    },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,3 +1,29 @@
 .ms-content-layout {
   padding: 20px 42px 16px 42px;
 }
+
+app-header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background: var(--red);
+}
+
+.ms-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1.6fr 12px;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+

@@ -1,1 +1,44 @@
-<p>home works!</p>
+<div class="ms-home-container">
+  <div>
+    <div class="ms-home-input-search-content">
+      <label for="person-name">Nome do personagem</label>
+      <input
+        placeholder="Pesquise..."
+        type="text"
+        name="person-name"
+        id="person-name">
+    </div>
+  </div>
+  <div>
+    <div class="ms-grid-table">
+      <div class="ms-header-table">
+        <span>Personagem</span>
+      </div>
+      <div class="ms-header-table">
+        <span>Séries</span>
+      </div>
+      <div class="ms-header-table">
+        <span>Eventos</span>
+      </div>
+    </div>
+    <div class="ms-grid-table-row" *ngFor="let item of teste">
+      <div>
+        <div class="ms-img-person">
+          <img src="https://github.com/Williamsf.png" alt="William Silva"/>
+        </div>
+        <span>
+          {{item.inicio}}
+        </span>
+      </div>
+      <div>
+        {{item.meio}}
+      </div>
+      <div>
+        {{item.fim}}
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-pagination></app-pagination>
+  </div>
+</div>

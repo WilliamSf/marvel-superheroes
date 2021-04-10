@@ -1,0 +1,62 @@
+.ms-home-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.ms-home-input-search-content {
+  margin-bottom: 34px;
+  input {
+    width: 400px;
+  }
+}
+
+.ms-grid-table {
+  display: grid;
+  grid-template-columns: 30% 30% 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 12px;
+}
+
+.ms-header-table {
+  background: var(--red);
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 10px;
+}
+
+.ms-grid-table-row {
+  display: grid;
+  grid-template-columns: 30% 30% 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 12px;
+  border-bottom: 2px solid var(--red-35);
+  height: 112px;
+  padding: 20px 5px;
+  transition: background 0.2s ease-in;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.1rem;
+
+  &:hover {
+    background: var(--red-10);
+  }
+
+  div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.ms-img-person {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.ms-img-person > img {
+  width: 3.7rem;
+  height: 3.7rem;
+  border-radius: 50%;
+}
+

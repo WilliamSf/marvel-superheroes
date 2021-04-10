@@ -1,0 +1,38 @@
+.ms-header-container {
+  display: flex;
+  padding: 20px 42px 16px 42px;
+  div {
+    display: flex;
+    flex: 1;
+    h2 {
+      font-family: 'IdaNarrowLight', monospace;
+      font-weight: lighter;
+      color: var(--red);
+      margin: 0;
+    }
+
+    &:first-child {
+      justify-content: flex-start;
+    }
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.ms-header-title {
+  position: relative;
+  span {
+    font-family: 'IdaNarrowBold', monospace;
+    &:before {
+      position: absolute;
+      bottom: -5px;
+      content: "";
+      width: 54px;
+      height: 4px;
+      border-radius: 1px;
+      background-color: var(--red);
+    }
+  }
+}

@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --red: #D42026;
+  --red-35: rgba(212, 32, 38, 0.35);
+  --red-10: rgba(213, 32, 38, 0.1);
+  --text: #565656;
+  --input: #A5A5A5;
+}
+
 @font-face {
   font-family: 'IdaNarrow';
   src: url('../src/assets/fonts/Ida_Narrow.ttf');
@@ -9,7 +17,6 @@
 @font-face {
   font-family: 'IdaNarrowLight';
   src: url('../src/assets/fonts/Ida_Narrow_Light.ttf');
-  font-style: normal;
   font-weight: lighter;
 }
 
@@ -17,7 +24,6 @@
   font-family: 'IdaNarrowBold';
   src: url('../src/assets/fonts/Ida_Narrow_Bold.ttf');
   font-weight: bold;
-  font-style: normal;
 }
 
 * {
@@ -26,4 +32,37 @@
 
 body {
   margin: 0;
+}
+
+label {
+  color: var(--red);
+}
+
+.ms-row {
+  margin-bottom: 20px;
+}
+
+input[type=text] {
+  display: block;
+  padding: 11px 10px;
+  margin: 2px 0;
+  border: 1px solid var(--input);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: #4e4e4e auto 1px;
+  }
+}
+
+@media(max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
