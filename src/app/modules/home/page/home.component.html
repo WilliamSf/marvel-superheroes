@@ -15,10 +15,10 @@
       <div class="ms-header-table">
         <span>Personagem</span>
       </div>
-      <div class="ms-header-table">
+      <div class="ms-header-table ms-header-table-none">
         <span>Séries</span>
       </div>
-      <div class="ms-header-table">
+      <div class="ms-header-table ms-header-table-none">
         <span>Eventos</span>
       </div>
     </div>
@@ -32,10 +32,10 @@
           {{character.name}}
         </span>
       </div>
-      <div >
+      <div class="ms-header-table-none">
         <p *ngFor="let serie of character.series.items | slice:0:3">{{serie.name}}</p>
       </div>
-      <div>
+      <div class="ms-header-table-none">
         <p *ngFor="let event of character.events.items | slice:0:3">{{event.name}}</p>
       </div>
     </div>

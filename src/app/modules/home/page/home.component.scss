@@ -79,4 +79,29 @@
   border-radius: 50%;
 }
 
+@media(max-width: 992px) {
+  .ms-home-input-search-content {
+    padding: 0 20px;
+  }
+}
+
+@media(max-width: 600px) {
+  .ms-home-input-search-content {
+    margin-bottom: 12px;
+  }
+
+  .ms-grid-table {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-header-table-none {
+    display: none !important;
+  }
+
+  .ms-grid-table-row {
+    grid-template-columns: 1fr;
+    height: 60px;
+    padding: 11px 5px;
+  }
+}
 

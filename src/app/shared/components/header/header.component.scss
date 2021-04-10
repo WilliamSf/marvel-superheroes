@@ -36,3 +36,23 @@
     }
   }
 }
+
+@media(max-width: 992px) {
+  .ms-header-container {
+    padding: 20px 20px 16px 20px;
+    div h2 {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .ms-header-container {
+    padding: 5px 20px 5px 20px;
+    div {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
