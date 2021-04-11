@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './page/home.component';
-import { CharactersResolver } from './service/characters-resolver.service';
+import { HomeResolver } from './service/home-resolver.service';
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     resolve: {
-      characters: CharactersResolver
+      characters: HomeResolver
     }
   },
 ];

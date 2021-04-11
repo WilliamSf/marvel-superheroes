@@ -16,6 +16,6 @@ export class CharactersService {
   }
 
   getSingle(id: number): Observable<any> {
-    return this.http.get(`/projects/${id}`);
+    return this.http.get(`${environment.API}characters/${id}?apikey=ed5accb8c7697714ac1dbf1c7584c3c0`);
   }
 }

@@ -14,7 +14,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersResolver implements Resolve<Characters> {
+export class CharacterResolver implements Resolve<Characters> {
   constructor(private charactersService: CharactersService, private router: Router) {}
 
   resolve(
@@ -22,7 +22,7 @@ export class CharactersResolver implements Resolve<Characters> {
     state: RouterStateSnapshot
   ): Observable<any> {
     return this.charactersService
-      .getAll()
+      .getSingle(route.params.id)
       .pipe(catchError(() => this.router.navigateByUrl('/')));
   }
 }

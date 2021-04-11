@@ -10,7 +10,7 @@
         id="person-name">
     </div>
   </div>
-  <div>
+  <div >
     <div class="ms-grid-table">
       <div class="ms-header-table">
         <span>Personagem</span>
@@ -22,7 +22,10 @@
         <span>Eventos</span>
       </div>
     </div>
-    <div class="ms-grid-table-row" *ngFor="let character of filteredCharacters | async">
+    <div
+      class="ms-grid-table-row"
+      *ngFor="let character of filteredCharacters | async"
+      (click)="accessCharacterDetails(character.id)">
       <div>
         <div
           [style.backgroundImage]="'url('+character.thumbnail.path+'.'+character.thumbnail.extension+')'"

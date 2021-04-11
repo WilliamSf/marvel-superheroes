@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CharactersService } from '@data/characters/characters.service';
 import { Characters } from '@data/schema/characters';
 import { PaginationService } from '@shared/components/pagination/pagination.service';
@@ -19,13 +19,25 @@ export class HomeComponent implements OnInit {
   public filteredCharacters: Observable<any>;
   public characterControl = new FormControl();
 
-  constructor(private route: ActivatedRoute, private paginationService: PaginationService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private paginationService: PaginationService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.manageNameControl();
-    this.charactersData = this.route.snapshot.data.characters.data.results;
+    this.activatedRoute.data.subscribe(data => {
+      this.charactersData = data.characters.data.results;
+    });
+    console.log(this.paginationService.paginate(this.activatedRoute.snapshot.data.characters.data.results.length))
+  }
 
-    console.log(this.paginationService.paginate(this.route.snapshot.data.characters.data.results.length))
+  /**
+   * accessCharacterDetails
+   */
+  public accessCharacterDetails(id: number) {
+    this.router.navigate(['../personagem', id], {relativeTo: this.activatedRoute})
   }
 
   private manageNameControl() {

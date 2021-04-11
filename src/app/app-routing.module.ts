@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule)
       },
       {
+        path: 'personagem',
+        loadChildren: () => import('@modules/character/character.module').then(m => m.CharacterModule)
+      },
+      {
         path: '**',
         component: PageNotFoundComponent
       },

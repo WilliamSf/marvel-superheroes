@@ -1,0 +1,52 @@
+<div class="ms-character-container">
+  <div class="ms-character-left">
+    <div>
+      <img src="{{characterData.thumbnail.path}}.{{characterData.thumbnail.extension}}" alt="{{characterData.name}}">
+    </div>
+    <div>
+      <h2>{{characterData.name}}</h2>
+    </div>
+    <div>
+      <span>
+        {{characterData.description === '' ? 'Sem descrição' : characterData.description}}
+      </span>
+    </div>
+  </div>
+  <div class="ms-character-right">
+    <div>
+      <h3 class="no-margin-top">Histórias em quadrinhos</h3>
+      <span *ngFor="let comic of characterData.comics.items; let i=index">
+        {{comic.name}}
+        <span *ngIf="(characterData.comics.items.length - 1) > i" > / </span>
+      </span>
+      <span *ngIf="characterData.comics.items.length === 0">Nenhuma histórias em quadrinho</span>
+    </div>
+
+    <div>
+      <h3>Eventos</h3>
+      <span *ngFor="let event of characterData.events.items; let i=index">
+        {{event.name}}
+        <span *ngIf="(characterData.events.items.length - 1) > i" > / </span>
+      </span>
+      <span *ngIf="characterData.events.items.length === 0">Nenhum evento</span>
+    </div>
+
+    <div>
+      <h3>Séries</h3>
+      <span *ngFor="let serie of characterData.series.items; let i=index">
+        {{serie.name}}
+        <span *ngIf="(characterData.series.items.length - 1) > i" > / </span>
+      </span>
+      <span *ngIf="characterData.series.items.length === 0">Nenhuma série</span>
+    </div>
+
+    <div>
+      <h3>Histórias</h3>
+      <span *ngFor="let storie of characterData.stories.items; let i=index">
+        {{storie.name}}
+        <span *ngIf="(characterData.stories.items.length - 1) > i" > / </span>
+      </span>
+      <span *ngIf="characterData.stories.items.length === 0">Nenhuma história</span>
+    </div>
+  </div>
+</div>
