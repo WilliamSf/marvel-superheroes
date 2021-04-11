@@ -79,6 +79,83 @@
   border-radius: 50%;
 }
 
+.ms-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin-top: 16px;
+  margin-bottom: 0;
+  padding-right: 40px;
+  li {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: var(--red);
+
+      font-size: 1.2rem;
+      padding: 0 10px;
+      line-height: 29px;
+      text-decoration-line: none;
+
+      height: 28px;
+      width: 8px;
+      cursor: pointer;
+    }
+
+    &.disabled {
+      a {
+        color: var(--red-35);
+        cursor: default;
+      }
+    }
+
+    &.ms-pagination-button {
+      a {
+        cursor: pointer;
+        margin-right: 20px;
+        border: 2px solid var(--red);
+        border-radius: 50%;
+        color: var(--red);
+        box-sizing: content-box;
+      }
+
+      &.active {
+        a {
+          background-color: var(--red);
+          color: #fff;
+        }
+      }
+
+    }
+  }
+}
+
+.ms-pagination-button-arrow {
+  padding: 0 !important;
+  &:first-of-type {
+    margin-right: 12px;;
+  }
+  &:last-of-type {
+    margin-left: -7px;
+  }
+}
+
+.ms-pagination-triangle-left {
+  transform: rotateY(180deg);
+}
+
+.ms-no-margin {
+  margin-right: 0 !important;
+}
+
+
 @media(max-width: 992px) {
   .ms-home-input-search-content {
     padding: 0 20px;
@@ -86,6 +163,13 @@
 }
 
 @media(max-width: 600px) {
+
+  .ms-home-input-search-content {
+    input {
+      width: 90%;
+    }
+  }
+
   .ms-home-input-search-content {
     margin-bottom: 12px;
   }

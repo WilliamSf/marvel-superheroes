@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CharactersService } from '@data/characters/characters.service';
 import { Characters } from '@data/schema/characters';
-import { PaginationService } from '@shared/components/pagination/pagination.service';
 import { Observable } from 'rxjs';
 import { catchError, map, startWith } from 'rxjs/operators';
 
@@ -15,22 +14,26 @@ import { catchError, map, startWith } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
 
   public charactersData = [];
+  public pages = [];
+  public charactersGrouped;
+
+  public currentPage = '';
 
   public filteredCharacters: Observable<any>;
   public characterControl = new FormControl();
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private paginationService: PaginationService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.manageNameControl();
     this.activatedRoute.data.subscribe(data => {
-      this.charactersData = data.characters.data.results;
+      this.charactersData = data.characters.data;
+      this.charactersGrouped = data.characters.grouped;
+      this.pages = Object.keys(this.charactersGrouped);
     });
-    console.log(this.paginationService.paginate(this.activatedRoute.snapshot.data.characters.data.results.length))
   }
 
   /**
@@ -40,11 +43,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['../personagem', id], {relativeTo: this.activatedRoute})
   }
 
-  private manageNameControl() {
+  public manageNameControl(param = 'pagination1') {
+    this.currentPage = param;
     this.filteredCharacters = this.characterControl.valueChanges
       .pipe(
         startWith(''),
-        map(option => option ? this.charactersNameFilter(option) : this.charactersData.slice())
+        map(option => option ? this.charactersNameFilter(option) : this.charactersGrouped[param].slice())
       );
   }
 

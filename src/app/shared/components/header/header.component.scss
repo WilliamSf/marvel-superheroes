@@ -5,8 +5,8 @@
     display: flex;
     flex: 1;
     h2 {
-      font-family: 'IdaNarrowLight', monospace;
-      font-weight: lighter;
+      font-family: 'Roboto', monospace;
+      font-weight: 300;
       color: var(--red);
       margin: 0;
     }
@@ -25,7 +25,8 @@
   position: relative;
   cursor: pointer;
   span {
-    font-family: 'IdaNarrowBold', monospace;
+    font-family: 'Roboto', monospace;
+    font-weight: 900;
     &:before {
       position: absolute;
       bottom: -5px;
